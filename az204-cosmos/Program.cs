@@ -6,6 +6,8 @@ public class Program
     private static readonly string EndpointUri = "https://pvoulgaris9398.documents.azure.com:443/";
 
     // Set variable to the Primary Key from earlier.
+	// No worries, this key is no longer active, nor would I make it public in source code if it was.
+	// This should come from an environment variable or an Azure Key Vault secret.
     private static readonly string PrimaryKey = "HHKR2BlFThNjJQuR3Cqk9uzAXAUJDpGqtsqxFz7TauQpCg3VEUKU5XiPymyxHKEYsVIMaC2BQn5jACDbWQZlpg==";
 
     // The Cosmos client instance
