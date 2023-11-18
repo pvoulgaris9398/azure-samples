@@ -1,0 +1,11 @@
+{
+    "id": "123",
+    "categoryName": "xyz",
+    "name": "_a new item updated",
+    "inventory": [
+      {
+        "location": "Dallas",
+        "inventory": 100
+      }
+    ]
+  }
