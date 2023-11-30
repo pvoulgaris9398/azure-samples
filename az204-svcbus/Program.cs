@@ -7,7 +7,8 @@ internal class Program
         {
 
             // connection string to your Service Bus namespace
-            string connectionString = "Endpoint=sb://az204svcbus9398.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=K/XScaT/QpVtMj+TUil+EaS0CiwBhN5WE+ASbGw9+oc=";
+            // no worries, none of the keys are active but for sure STOP STORING THEM HERE!
+            string connectionString = "<>";
 
             // name of your Service Bus topic
             string queueName = "az204queue";
