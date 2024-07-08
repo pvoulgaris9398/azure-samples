@@ -23,7 +23,7 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 
   tags = {
-    Description = "Terraform getting started"
+    Description = "My Azure Sample(s) Resource Group"
     Environment = "Development"
     Team        = "DevOps"
   }
