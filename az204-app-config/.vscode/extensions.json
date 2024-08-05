@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "hashicorp.terraform",
+        "csharpier.csharpier-vscode",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp"
+    ]
+}
