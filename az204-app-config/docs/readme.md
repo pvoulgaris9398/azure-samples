@@ -47,3 +47,9 @@ authorization.RoleAssignmentsClient#Create: Failure responding to request: Statu
 ![](2024-08-05-07.png)
 
 - Not sure what's up with that, but not looking good. It's going on 6 minutes and still working...
+
+- As of this time `8/5/24 5:34 PM1` I am not able to use `terraform` to create the app settings, for some reason. \
+None of the things I've tried seem to work
+- **BUT**, I _can_ create the settings via the az command-line, see `create-setting.sh` \
+and the Azure Portal
+- And see them queried from my sample app, after updating the connection string
