@@ -30,3 +30,8 @@ az appconfig kv set --name app-config-dev01 --key TestApp:Settings:Test --value 
 - Progress:
 
 ![](2024-08-05-05.png)
+
+```text
+authorization.RoleAssignmentsClient#Create: Failure responding to request: StatusCode=400 -- Original Error: autorest/azure: Service returned an error. Status=400 Code="InvalidPrincipalId" Message="A valid principal ID must be provided for role assignment."
+
+```
