@@ -36,23 +36,24 @@ resource "azurerm_app_configuration" "appconf" {
 }
 
 # DO I NEED THIS???
+# Yes.
 data "azurerm_client_config" "current" {}
 
 # DO I NEED THIS???
-# resource "azurerm_role_assignment" "appconf_dataowner" {
-#   scope                = azurerm_app_configuration.appconf.id
-#   role_definition_name = "App Configuration Data Owner"
-#   principal_id         = data.azurerm_client_config.current.object_id
-# }
-
-resource "azurerm_app_configuration_key" "example1" {
-  configuration_store_id = azurerm_app_configuration.appconf.id
-  key = "AppConfigExample:Settings:MoonName"
-  value = "Triton"
+# Yes
+resource "azurerm_role_assignment" "appconf_dataowner" {
+  scope                = azurerm_app_configuration.appconf.id
+  role_definition_name = "App Configuration Data Owner"
+  principal_id         = data.azurerm_client_config.current.object_id
 }
 
-resource "azurerm_app_configuration_key" "example2" {
+resource "azurerm_app_configuration_key" "example" {
   configuration_store_id = azurerm_app_configuration.appconf.id
   key = "AppConfigExample:Settings:PlanetName"
   value = "Uranus"
+  # This is KEY: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_configuration_key
+  depends_on = [
+    azurerm_role_assignment.appconf_dataowner
+  ]
 }
+

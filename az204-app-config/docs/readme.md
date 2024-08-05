@@ -22,3 +22,11 @@
 ```bash
 az appconfig kv set --name app-config-dev01 --key TestApp:Settings:Test --value foobarwinp --yes
 ```
+
+- Needed to add [depends_on](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_configuration_key)
+
+![](2024-08-05-04.png)
+
+- Progress:
+
+![](2024-08-05-05.png)
