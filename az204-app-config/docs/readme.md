@@ -33,5 +33,17 @@ az appconfig kv set --name app-config-dev01 --key TestApp:Settings:Test --value 
 
 ```text
 authorization.RoleAssignmentsClient#Create: Failure responding to request: StatusCode=400 -- Original Error: autorest/azure: Service returned an error. Status=400 Code="InvalidPrincipalId" Message="A valid principal ID must be provided for role assignment."
-
 ```
+
+- Apparently the circled entry needs to be `client_id` instead of `object_id`:
+
+![](2024-08-05-06.png)
+
+- See entry [here](https://www.reddit.com/r/Terraform/comments/106sr7d/azure_azurerm_role_assignment_invalidprincipalid/)
+
+- Although, this is taking a long time \
+(I seem to remember creating a service principal in the past took a _long_ time)
+
+![](2024-08-05-07.png)
+
+- Not sure what's up with that, but not looking good. It's going on 6 minutes and still working...
