@@ -17,4 +17,6 @@ var app = PublicClientApplicationBuilder
 string[] scopes = { "user.read" };
 AuthenticationResult result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 
-WriteLine($"Token:\t{result.AccessToken}");
+WriteLine($"Claims Principal:\t{result.ClaimsPrincipal}\n");
+WriteLine($"Expires On:\t{result.ExpiresOn}\n");
+WriteLine($"Access Token:\t{result.AccessToken}\n");
