@@ -14,13 +14,13 @@ provider "azurerm" {
 
 # Create the resource group
 resource "azurerm_resource_group" "rg" {
-  name     = "myResourceGroup-6266"
+  name     = "myResourceGroup-626667"
   location = "eastus"
 }
 
 # Create the Linux App Service Plan
 resource "azurerm_service_plan" "appserviceplan" {
-  name                = "webapp-asp-6266"
+  name                = "webapp-asp-626667"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   os_type             = "Windows"
@@ -29,7 +29,7 @@ resource "azurerm_service_plan" "appserviceplan" {
 
 # Create the web app, pass in the App Service Plan ID
 resource "azurerm_windows_web_app" "webapp" {
-  name                = "webapp-6266"
+  name                = "webapp-626667"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   service_plan_id     = azurerm_service_plan.appserviceplan.id
@@ -43,7 +43,7 @@ resource "azurerm_windows_web_app" "webapp" {
 resource "azurerm_app_service_source_control" "sourcecontrol" {
   app_id                 = azurerm_windows_web_app.webapp.id
   repo_url               = "https://github.com/PacktPublishing/Developing-Solutions-for-Microsoft-Azure-AZ-204-Exam-Guide-2nd-Edition/tree/main/Chapter02/01-hello-world"
-  branch                 = "main"
+  branch                 = "master"
   use_manual_integration = true
   use_mercurial          = false
 }
