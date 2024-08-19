@@ -1,0 +1,5 @@
+{
+    "editor.formatOnSave": true,
+    "window.zoomLevel": 2,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+}
