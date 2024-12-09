@@ -1,14 +1,14 @@
-﻿using Microsoft.Azure.Cosmos;
+﻿using Azure.Data.Tables;
+using dotenv.net;
+using Microsoft.Azure.Cosmos;
 
 public class Program
 {
     // Replace <documentEndpoint> with the information created earlier
-    private static readonly string EndpointUri = "https://pvoulgaris9398.documents.azure.com:443/";
+    private static readonly string EndpointUri = "";
 
-    // Set variable to the Primary Key from earlier.
-	// No worries, this key is no longer active, nor would I make it public in source code if it was.
-	// This should come from an environment variable or an Azure Key Vault secret.
-    private static readonly string PrimaryKey = "HHKR2BlFThNjJQuR3Cqk9uzAXAUJDpGqtsqxFz7TauQpCg3VEUKU5XiPymyxHKEYsVIMaC2BQn5jACDbWQZlpg==";
+    // This should come from an environment variable or an Azure Key Vault secret.
+    private static readonly string PrimaryKey = "";
 
     // The Cosmos client instance
     private CosmosClient? cosmosClient;
@@ -28,8 +28,9 @@ public class Program
         try
         {
             Console.WriteLine("Beginning operations...\n");
+            DotEnv.Load();
             Program p = new Program();
-            await p.CosmosAsync();
+            await p.CreateTable();
 
         }
         catch (CosmosException de)
@@ -47,31 +48,44 @@ public class Program
             Console.ReadKey();
         }
     }
-   public async Task CosmosAsync()
-{
-    // Create a new instance of the Cosmos Client
-    this.cosmosClient = new CosmosClient(EndpointUri, PrimaryKey);
 
-    // Runs the CreateDatabaseAsync method
-    await this.CreateDatabaseAsync();
+    public async Task CreateTable()
+    {
+        var connectionString = Environment.GetEnvironmentVariable("AZURE_COSMOSDB_CONNECTION_STRING");
+        string tableName = "customerscode";
+            var client = new TableClient(connectionString, tableName);
+            await client.CreateIfNotExistsAsync();
 
-    // Run the CreateContainerAsync method
-    await this.CreateContainerAsync();
-}
+    }
+    public async Task CosmosAsync()
+    {
+        // Create a new instance of the Cosmos Client
+        this.cosmosClient = new CosmosClient(EndpointUri, PrimaryKey);
 
-private async Task CreateDatabaseAsync()
-{
-    // Create a new database using the cosmosClient
-    this.database = await this.cosmosClient?.CreateDatabaseIfNotExistsAsync(databaseId);
-    Console.WriteLine("Created Database: {0}\n", this.database.Id);
-}
+        // Runs the CreateDatabaseAsync method
+        await this.CreateDatabaseAsync();
 
-private async Task CreateContainerAsync()
-{
-    // Create a new container
-    this.container = await this.database?.CreateContainerIfNotExistsAsync(containerId, "/LastName");
-    Console.WriteLine("Created Container: {0}\n", this.container.Id);
-}
+        // Run the CreateContainerAsync method
+        await this.CreateContainerAsync();
+    }
+
+    private async Task CreateDatabaseAsync()
+    {
+        // Create a new database using the cosmosClient
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        database = await cosmosClient?.CreateDatabaseIfNotExistsAsync(databaseId);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+        Console.WriteLine("Created Database: {0}\n", this.database.Id);
+    }
+
+    private async Task CreateContainerAsync()
+    {
+        // Create a new container
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        container = await database?.CreateContainerIfNotExistsAsync(containerId, "/LastName");
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+        Console.WriteLine("Created Container: {0}\n", this.container.Id);
+    }
 
 
 }
