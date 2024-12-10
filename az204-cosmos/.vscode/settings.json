@@ -2,6 +2,11 @@
   "window.zoomLevel": 1,
   "editor.minimap.autohide": true,
   "editor.formatOnSave": true,
+  "[csharp]": {
+    "editor.maxTokenizationLineLength": 2500,
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[jsonc]": {
     "editor.quickSuggestions": {
       "strings": true

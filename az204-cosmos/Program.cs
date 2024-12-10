@@ -1,4 +1,6 @@
-﻿using Azure.Data.Tables;
+﻿using Azure;
+using Azure.Data.Tables;
+using Azure.Data.Tables.Models;
 using dotenv.net;
 using Microsoft.Azure.Cosmos;
 
@@ -6,7 +8,6 @@ public class Program
 {
     // Replace <documentEndpoint> with the information created earlier
     private static readonly string EndpointUri = "";
-
     // This should come from an environment variable or an Azure Key Vault secret.
     private static readonly string PrimaryKey = "";
 
@@ -29,8 +30,8 @@ public class Program
         {
             Console.WriteLine("Beginning operations...\n");
             DotEnv.Load();
-            Program p = new Program();
-            await p.CreateTable();
+            var t = new TableTest();
+            await t.Run();
 
         }
         catch (CosmosException de)
@@ -49,14 +50,6 @@ public class Program
         }
     }
 
-    public async Task CreateTable()
-    {
-        var connectionString = Environment.GetEnvironmentVariable("AZURE_COSMOSDB_CONNECTION_STRING");
-        string tableName = "customerscode";
-        var client = new TableClient(connectionString, tableName);
-        await client.CreateIfNotExistsAsync();
-
-    }
     public async Task CosmosAsync()
     {
         // Create a new instance of the Cosmos Client

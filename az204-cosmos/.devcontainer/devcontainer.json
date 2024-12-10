@@ -14,7 +14,8 @@
         "pkief.material-icon-theme",
         "esbenp.prettier-vscode",
         "editorconfig.editorconfig",
-        "humao.rest-client"
+        "humao.rest-client",
+        "PKief.material-icon-theme"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -24,6 +25,17 @@
           },
           "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.suggest.insertMode": "replace"
+        },
+        "[csharp]": {
+          "editor.formatOnSave": true,
+          "editor.maxTokenizationLineLength": 2500,
+          "editor.inlineSuggest.suppressSuggestions": false,
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.codeActionsOnSave": [
+            "source.fixAll",
+            "source.organizeImports",
+            "source.sortMembers"
+          ]
         }
       }
     }

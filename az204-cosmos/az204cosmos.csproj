@@ -9,9 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="System.Console" Static="true" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="dotenv.net" Version="3.2.1" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.46.0" />
-    <PackageReference Include="Azure.Data.Tables" Version="12.9.1" /> 
+    <PackageReference Include="Azure.Data.Tables" Version="12.9.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
