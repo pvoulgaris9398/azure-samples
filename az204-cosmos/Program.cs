@@ -53,8 +53,8 @@ public class Program
     {
         var connectionString = Environment.GetEnvironmentVariable("AZURE_COSMOSDB_CONNECTION_STRING");
         string tableName = "customerscode";
-            var client = new TableClient(connectionString, tableName);
-            await client.CreateIfNotExistsAsync();
+        var client = new TableClient(connectionString, tableName);
+        await client.CreateIfNotExistsAsync();
 
     }
     public async Task CosmosAsync()

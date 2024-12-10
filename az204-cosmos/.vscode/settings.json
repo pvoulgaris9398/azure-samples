@@ -1,4 +1,12 @@
 {
-    "window.zoomLevel": 1,
-    "editor.minimap.autohide": true
+  "window.zoomLevel": 1,
+  "editor.minimap.autohide": true,
+  "editor.formatOnSave": true,
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace"
+  }
 }
