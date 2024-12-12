@@ -13,31 +13,11 @@
         "ms-dotnettools.vscodeintellicode-csharp",
         "pkief.material-icon-theme",
         "esbenp.prettier-vscode",
-        "editorconfig.editorconfig",
         "humao.rest-client",
-        "PKief.material-icon-theme"
+        "PKief.material-icon-theme",
+        "EditorConfig.EditorConfig"
       ],
-      "settings": {
-        "editor.formatOnSave": true,
-        "[jsonc]": {
-          "editor.quickSuggestions": {
-            "strings": true
-          },
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.suggest.insertMode": "replace"
-        },
-        "[csharp]": {
-          "editor.formatOnSave": true,
-          "editor.maxTokenizationLineLength": 2500,
-          "editor.inlineSuggest.suppressSuggestions": false,
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
-          "editor.codeActionsOnSave": [
-            "source.fixAll",
-            "source.organizeImports",
-            "source.sortMembers"
-          ]
-        }
-      }
+      "settings": {}
     }
   },
   "mounts": [
