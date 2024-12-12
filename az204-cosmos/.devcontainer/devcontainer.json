@@ -17,12 +17,36 @@
         "PKief.material-icon-theme",
         "EditorConfig.EditorConfig"
       ],
-      "settings": {}
+      "settings": {
+        "window.zoomLevel": 1,
+        "editor.minimap.autohide": true,
+        "editor.formatOnSave": true,
+        "eslint.format.enable": true,
+        "workbench.iconTheme": "material-icon-theme",
+        "[jsonc]": {
+          "editor.formatOnSave": true,
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.suggest.insertMode": "replace"
+        },
+        "[csharp]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "ms-dotnettools.csharp",
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always",
+
+            "source.fixAll.eslint": "always",
+            "source.sortMembers": "always"
+          }
+        }
+      }
     }
   },
   "mounts": [
-    "source=profile,target=/root,type=volume",
-    "target=/root/.vscode-server,type=volume"
+    "source=profile,target=/root,type=volume"
+    //"target=/root/.vscode-server,type=volume"
   ],
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace",

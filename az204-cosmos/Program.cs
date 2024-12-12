@@ -1,8 +1,6 @@
-﻿using Azure;
-using Azure.Data.Tables;
-using Azure.Data.Tables.Models;
-using dotenv.net;
+﻿using dotenv.net;
 using Microsoft.Azure.Cosmos;
+using Microsoft.Azure;
 
 public class Program
 {

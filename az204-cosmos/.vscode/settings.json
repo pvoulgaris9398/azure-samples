@@ -1,23 +1,7 @@
 {
-  "window.zoomLevel": 1,
-  "editor.minimap.autohide": true,
-  "editor.formatOnSave": true,
-  "eslint.format.enable": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "[jsonc]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.suggest.insertMode": "replace"
-  },
-  "[csharp]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-dotnettools.csharp",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "always",
-      "source.fixAll.eslint": "always",
-      "source.sortMembers": "always"
-    }
+  "files.exclude": {
+    ".vs": true,
+    "obj": true,
+    "bin": true
   }
 }
