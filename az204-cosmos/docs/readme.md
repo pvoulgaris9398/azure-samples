@@ -1,9 +1,5 @@
 # Instructions
 
-## TODO
-
-- Get this all working
-
 ## Run `az login`
 
 ## Create `.env` file with the following values:
