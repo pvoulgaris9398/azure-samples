@@ -8,20 +8,20 @@
 
 ## Create `.env` file with the following values:
 
-- `resource` &rarr; The resource group name
-- `region` &rarr; The region to use
-- `account` &rarr; The name of the storage account
-- `table` &rarr; The name of the table to create
-- `AZURE_COSMOSDB_CONNECTION_STRING` &rarr; The connection string to use
+- `RESOURCE_GROUP_NAME` &rarr; The resource group name
+- `REGION` &rarr; The region to use
+- `STORAGE_ACCOUNT_NAME` &rarr; The name of the storage account
+- `STORAGE_ACCOUNT_TABLE_NAME` &rarr; The name of the table to create
+- `AZURE_TABLE_CONNECTION_STRING` &rarr; The connection string to use
 
-## Run `az group create -l $region -n $resource`
+## Run `az group create -l $REGION -n $RESOURCE_GROUP_NAME`
 
-## Run `az storage account create --name $account --resource-group $resource`
+## Run `az storage account create --name $STORAGE_ACCOUNT_NAME --resource-group $RESOURCE_GROUP_NAME`
 
-## Run `az storage account show-connection-string -group $resource -bn $account`
+## Run `az storage account show-connection-string -g $RESOURCE_GROUP_NAME -n $STORAGE_ACCOUNT_NAME`
 
 - Note this works, but the order of the arguments is important
-- For some reason, using the `-n $account` alone does not work
+- For some reason, using the `-n $STORAGE_ACCOUNT_NAME` alone does not work
 
 ![](Screenshot%202024-12-10%20131933.png)
 

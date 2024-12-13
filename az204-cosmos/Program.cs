@@ -28,7 +28,7 @@ public class Program
         {
             Console.WriteLine("Beginning operations...\n");
             DotEnv.Load();
-            var t = new TableTest();
+            var t = new StorageAccount();
             await t.Run();
 
         }
