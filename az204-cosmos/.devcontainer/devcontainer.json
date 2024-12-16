@@ -14,7 +14,6 @@
         "pkief.material-icon-theme",
         "esbenp.prettier-vscode",
         "humao.rest-client",
-        "PKief.material-icon-theme",
         "EditorConfig.EditorConfig"
       ],
       "settings": {

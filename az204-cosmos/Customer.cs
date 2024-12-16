@@ -1,7 +1,11 @@
-public class Customer
-{
-    public int Id { get; set; }
-    public string? Name { get; set; }
 
-    public bool IsActive { get; set; }
+namespace az204cosmos
+{
+    public class Customer
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public bool IsActive { get; set; }
+    }
 }
+
