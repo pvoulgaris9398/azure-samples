@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace az204cosmos
+namespace AZ204Cosmos
 {
     public class Order
     {

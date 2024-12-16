@@ -1,7 +1,7 @@
 using System.Net;
 using Microsoft.Azure.Cosmos;
 
-namespace az204cosmos
+namespace AZ204Cosmos
 {
     public class Cosmos : IDisposable
     {

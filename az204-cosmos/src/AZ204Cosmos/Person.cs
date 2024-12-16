@@ -1,7 +1,7 @@
 using Azure;
 using Azure.Data.Tables;
 
-namespace az204cosmos
+namespace AZ204Cosmos
 {
     public class Person : ITableEntity
     {

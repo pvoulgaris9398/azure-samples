@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     ".vs": true,
-    "obj": true,
-    "bin": true
+    "**/obj": true,
+    "**/bin": true
   }
 }
