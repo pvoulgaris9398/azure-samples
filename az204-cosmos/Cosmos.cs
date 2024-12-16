@@ -6,7 +6,7 @@ public class Cosmos
     {
         get
         {
-            var value = Environment.GetEnvironmentVariable("COSMOS_ENDPOINT_URI");
+            var value = Environment.GetEnvironmentVariable ("COSMOS_ENDPOINT_URI");
             if (value != null)
             {
                 return value;
