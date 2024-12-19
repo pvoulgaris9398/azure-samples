@@ -1,5 +1,10 @@
 # Azure App Service Notes
 
+- `VNet Integration`
+  - Only available with `Basic`, `Standard` and `Premium` plans
+- `Deployment Slots`
+  - `Standard` or `Premium` required
+
 - [Team Blog](https://azure.github.io/AppService/)
 - [Tutorials](https://azure.github.io/AppService/zero-to-hero/)
 
