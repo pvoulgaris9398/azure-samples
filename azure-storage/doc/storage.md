@@ -1,3 +1,7 @@
+# Azure Storage
+
+- Not just limited to `blob` storage, there is much more
+
 Grab the connection string from the Azure portal under the access keys blade and create an environment variable as follows:
 
 export AZURE_BLOB_STORAGE_EXAMPLE_CONNECTION_STRING="<connection-string>"
