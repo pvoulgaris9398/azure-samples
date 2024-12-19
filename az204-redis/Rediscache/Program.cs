@@ -1,9 +1,9 @@
 ﻿using StackExchange.Redis;
 
-// connection string to your Redis Cache   
- //string? connectionString = Environment.GetEnvironmentVariable("REDIS_CONNECTION_STRING");
+string redis = "****"; //Redis cache "name"
+string key = "****";
 
-string? connectionString = "TODO";
+string connectionString = $"{redis}.redis.cache.windows.net:6380,password={key},ssl=True,abortConnect=False";
 
 using (var cache = ConnectionMultiplexer.Connect(connectionString))
 {

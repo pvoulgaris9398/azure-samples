@@ -1,0 +1,6 @@
+{
+    "window.zoomLevel": 2,
+    "editor.minimap.enabled":false,
+    "editor.stickyScroll.enabled": false,
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
