@@ -43,10 +43,9 @@
       }
     }
   },
-  "mounts": [
-    "source=profile,target=/root,type=volume"
-  ],
+  "mounts": ["source=profile,target=/root,type=volume"],
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "dotnet restore"
+  "postCreateCommand": "dotnet restore",
+  "remoteUser": "vscode"
 }
