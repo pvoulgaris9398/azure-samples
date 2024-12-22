@@ -1,4 +1,4 @@
-#bash
+#!/bin/bash
 
 endpoint=https://az204-egsite-381807886.azurewebsites.net/api/updates
 

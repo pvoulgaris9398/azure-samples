@@ -1,0 +1,52 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/dotnet:dev-8.0-noble",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscodeintellicode-csharp",
+        "pkief.material-icon-theme",
+        "esbenp.prettier-vscode",
+        "humao.rest-client",
+        "EditorConfig.EditorConfig"
+      ],
+      "settings": {
+        "window.zoomLevel": 1,
+        "editor.minimap.autohide": true,
+        "editor.formatOnSave": true,
+        "eslint.format.enable": true,
+        "workbench.iconTheme": "material-icon-theme",
+        "[jsonc]": {
+          "editor.formatOnSave": true,
+          "editor.quickSuggestions": {
+            "strings": true
+          },
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.suggest.insertMode": "replace"
+        },
+        "[csharp]": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "ms-dotnettools.csharp",
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always",
+
+            "source.fixAll.eslint": "always",
+            "source.sortMembers": "always"
+          }
+        }
+      }
+    }
+  },
+  "mounts": [
+    "source=profile,target=/root,type=volume"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "dotnet restore"
+}
