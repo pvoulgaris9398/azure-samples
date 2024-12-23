@@ -50,3 +50,32 @@ SITE_URL="https://$SITE_NAME.azurewebsites.net"
 - A _partition_ is a logically separated queue, operating in first-in-first-out (FIFO) pattern
 - Service will load-balance subscribers among the available partitions, if there are more partitions that subscribers
 - If all partitions already have a single subscriber, any new subscriber won't be able to connect
+
+## Capturing Events
+
+- Event _capturing_ is available for Standard and Premium Price where the event can still be available in the blob storage, even after expiration of the retention period
+- Extra charges may apply
+
+## Consumer Groups
+
+- Used to perform independent read of events by an application
+- Number of subscribers should not exceed five (5) consumers per group
+- This topic is a little hazy to me, come back to it
+
+## Event Consumption Services
+
+- Azure Event Grid is designed for communication between cloud and on-premises applications and services
+- Azure services can consume, process and analyze events from Event Hub
+- Azure Event Grid can be connected to Azure Event Hub as a bridge to Azure Queue Storage, Azure Service Bus, Azure Functions, Azure Cosmos DB, etc.
+- Azure Stream Analytics to process events and ingest them into Azure Blob Storage, Azure Queue Storage, Azure Service Bus, Azure Cosmos DB, Azure Synapse Analalytics and Power BI datasets
+  - Compared to Azure Event Grid, sophisticated filtering algorithms, including leveraging Azure Machine Learning Services
+- Big data ingestion via Azure Synapse Data Explorer and Azure Databricks solution
+
+## Authentication & Authorization
+
+- Shared Access Signature (SAS) tokens used to authenticate and authorize publishers and consumers with listen, send and manage rights
+- Managed Identifies - both user-assigned and system-assigned
+
+```text
+Left-off at `Developing Applications for Event Hubs` &rarr; `Sunday, 11/22/24`
+```
