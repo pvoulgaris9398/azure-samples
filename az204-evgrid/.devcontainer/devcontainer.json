@@ -19,6 +19,7 @@
       "settings": {
         "window.zoomLevel": 1,
         "editor.minimap.autohide": true,
+        "editor.stickyScroll.enabled": false,
         "editor.formatOnSave": true,
         "eslint.format.enable": true,
         "workbench.iconTheme": "material-icon-theme",
