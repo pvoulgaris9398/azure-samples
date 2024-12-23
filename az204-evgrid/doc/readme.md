@@ -28,6 +28,12 @@ SITE_URL="https://$SITE_NAME.azurewebsites.net"
 - Provide _namespace_, receive _fully-qualified domain name_ (FQDN)
 - Can be managed from firewall and supports MQ Telemetry Transport (MQTT) and Advanced Message Queue Protocol (AMQP) over WebSockers and HTTPS
 
+## Event Types
+
+- Discrete: report state changes and are actionable - EventGrid
+- Series: report a condition, time-ordered and analyzable - EventHub
+- User Notification: prompt user or their device for attention - Notification Hub
+
 ## Pricing Model
 
 - Basic Tier - No dynamic partition scaling, capturing events or VNet integration. Retention is limited to one (1) day
