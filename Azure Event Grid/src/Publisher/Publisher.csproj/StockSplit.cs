@@ -1,0 +1,1 @@
+public record StockSplit(string Ticker, int ShareQuantityStart, int ShareQuantityResult);
