@@ -1,64 +1,63 @@
-﻿using Azure.Messaging.ServiceBus;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Transactions;
+using Azure.Messaging.ServiceBus;
 using Domain;
 
-namespace publisher
+namespace Publisher;
+
+public class Program
 {
+    private static readonly string _firstQueueName = "simple-queue";
+    private static readonly string _secondQueueName = "advanced-queue";
+    private static readonly string[] _citylist = new[] { "Miami", "NYC", "London", "Paris", "Caracas" };
 
-    class Program
+    private static async Task Main()
     {
+        // configure client
+        var client = new ServiceBusClient(ConnectionString,
+            new ServiceBusClientOptions { EnableCrossEntityTransactions = true });
 
-        static string firstQueueName = "simple-queue";
-        static string secondQueueName = "advanced-queue";
-        static string[] citylist = new[] { "Miami", "NYC", "London", "Paris", "Caracas" };
+        var firstSender = client.CreateSender(_firstQueueName);
+        var secondSender = client.CreateSender(_secondQueueName);
 
-
-        static async Task Main()
+        var i = 0;
+        foreach (var city in _citylist)
         {
-            // configure client
-            ServiceBusClient client = new ServiceBusClient(ConnectionString,
-                new ServiceBusClientOptions { EnableCrossEntityTransactions = true });
-
-            ServiceBusSender firstSender = client.CreateSender(firstQueueName);
-            ServiceBusSender secondSender = client.CreateSender(secondQueueName);
-
-
-            var i = 0;
-            foreach (var city in citylist)
+            //submitting messages in transactions
+            using (var ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
-                //submitting messages in transactions
-                using (var ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+                // serialize booking object
+                var msg = JsonSerializer.Serialize(new Booking
                 {
-                    // serialize booking object
-                    string msg = JsonSerializer.Serialize(new Booking { HotelBookings = new[] { new Booking.HotelBooking() { City = city, CheckinDate = DateTime.Now, LeaveDate = DateTime.Now.AddDays(1) } } });
-
-
-                    ServiceBusMessage messageOene = new ServiceBusMessage(msg);
-                    //send in first queue
-                    await firstSender.SendMessageAsync(messageOene);
-
-                    ServiceBusMessage messageTwo = new ServiceBusMessage(msg)
+                    HotelBookings = new[]
                     {
-                        SessionId = "transaction-demo"
-                    };
+                        new Booking.HotelBooking
+                            { City = city, CheckinDate = DateTime.Now, LeaveDate = DateTime.Now.AddDays(1) }
+                    }
+                });
 
-                    //send in second queue
-                    await secondSender.SendMessageAsync(messageTwo);
 
-                    //commit
-                    ts.Complete();
-                }
+                var messageOne = new ServiceBusMessage(msg);
+                //send in first queue
+                await firstSender.SendMessageAsync(messageOne);
 
-                Console.WriteLine($"Message #{++i} was sent in both queue");
+                var messageTwo = new ServiceBusMessage(msg)
+                {
+                    SessionId = "transaction-demo"
+                };
+
+                //send in second queue
+                await secondSender.SendMessageAsync(messageTwo);
+
+                //commit
+                ts.Complete();
             }
 
-            //release recourses
-            await firstSender.CloseAsync();
-            await secondSender.CloseAsync();
+            Console.WriteLine($"Message #{++i} was sent in both queue");
         }
 
+        //release recourses
+        await firstSender.CloseAsync();
+        await secondSender.CloseAsync();
     }
-
 }
-

@@ -7,7 +7,7 @@
         {
             public string? To { get; set; }
             public string? From { get; set; }
-            public DateTime FlighDate { get; set; }
+            public DateTime FlightDate { get; set; }
         }
 
         public class HotelBooking
@@ -22,8 +22,8 @@
 
         public override string ToString()
         {
-            var air = AirBookings == null ? new[] { "No flights" } : AirBookings.Select(x => $"Flight: {x.To}=>{x.From} {x.FlighDate.Date}");
-            var hotel = HotelBookings == null ? new[] { "No hotels" } : HotelBookings.Select(x => $"Hotel: {x.City} {x.CheckinDate.Date}").ToArray();
+            var air = AirBookings == null ? ["No flights"] : AirBookings.Select(x => $"Flight: {x.To}=>{x.From} {x.FlightDate.Date}");
+            var hotel = HotelBookings == null ? ["No hotels"] : HotelBookings.Select(x => $"Hotel: {x.City} {x.CheckinDate.Date}").ToArray();
             return
                 string.Join("\r\n", air.Union(hotel));
 

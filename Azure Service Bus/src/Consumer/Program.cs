@@ -4,13 +4,12 @@ using Azure.Messaging.ServiceBus.Administration;
 using System.Transactions;
 using Domain;
 
-namespace consumer
+namespace Consumer
 {
-    class Program
+    public class Program
     {
-
-        static string advQueue = "advanced-queue";
-        static string simplQueue = "simple-queue";
+        private static string _advQueue = "advanced-queue";
+        private static string _simplQueue = "simple-queue";
 
         static async Task Main(string[] args)
         {
@@ -23,11 +22,11 @@ namespace consumer
 
             while (true)
             {
-                QueueRuntimeProperties advRuntimeProp = await adminClint.GetQueueRuntimePropertiesAsync(advQueue);
-                QueueRuntimeProperties simplRuntimeProp = await adminClint.GetQueueRuntimePropertiesAsync(simplQueue);
+                QueueRuntimeProperties advRuntimeProp = await adminClint.GetQueueRuntimePropertiesAsync(_advQueue);
+                QueueRuntimeProperties simplRuntimeProp = await adminClint.GetQueueRuntimePropertiesAsync(_simplQueue);
 
-                Console.WriteLine($"\r\n{advQueue} messages count: {advRuntimeProp.ActiveMessageCount}");
-                Console.WriteLine($"{simplQueue} messages count: {simplRuntimeProp.ActiveMessageCount}");
+                Console.WriteLine($"\r\n{_advQueue} messages count: {advRuntimeProp.ActiveMessageCount}");
+                Console.WriteLine($"{_simplQueue} messages count: {simplRuntimeProp.ActiveMessageCount}");
                 Console.WriteLine($"DLQ messages count: {advRuntimeProp.DeadLetterMessageCount}");
 
                 Console.WriteLine("\r\nChose [1-4] for demonstration:");
@@ -46,7 +45,7 @@ namespace consumer
                         await FailReceive(nonTransactionClient);
                         break;
                     case ConsoleKey.D3:
-                        await RecieveDeadLetter(nonTransactionClient);
+                        await ReceiveDeadLetter(nonTransactionClient);
                         break;
                     case ConsoleKey.D4:
                         await PeekAsync(nonTransactionClient);
@@ -60,10 +59,10 @@ namespace consumer
         /// </summary>
         /// <param name="client"></param>
         /// <returns></returns>
-        private static async Task RecieveDeadLetter(ServiceBusClient client)
+        private static async Task ReceiveDeadLetter(ServiceBusClient client)
         {
             //create a receiver pointed to DLQ
-            ServiceBusReceiver dlqReceiver = client.CreateReceiver(advQueue, new ServiceBusReceiverOptions
+            ServiceBusReceiver dlqReceiver = client.CreateReceiver(_advQueue, new ServiceBusReceiverOptions
             {
                 SubQueue = SubQueue.DeadLetter
             });
@@ -91,7 +90,7 @@ namespace consumer
         private static async Task PeekAsync(ServiceBusClient client)
         {
 
-            foreach (var queName in new[] { simplQueue, advQueue })
+            foreach (var queName in new[] { _simplQueue, _advQueue })
             {
                 //create receiver
                 ServiceBusReceiver receiver = client.CreateReceiver(queName);
@@ -121,9 +120,9 @@ namespace consumer
         private static async Task ReceiveInTransaction(ServiceBusClient client)
         {
             //create sender for advanced queue
-            ServiceBusSender sender = client.CreateSender(advQueue);
+            ServiceBusSender sender = client.CreateSender(_advQueue);
             //create receiver for simple queue
-            ServiceBusReceiver receiver = client.CreateReceiver(simplQueue);
+            ServiceBusReceiver receiver = client.CreateReceiver(_simplQueue);
 
             //pull msg from simple queue
             var firstMsg = await receiver.ReceiveMessageAsync(maxWaitTime: TimeSpan.FromSeconds(3));
@@ -168,7 +167,7 @@ namespace consumer
         private static async Task FailReceive(ServiceBusClient client)
         {
             //create receiver
-            ServiceBusReceiver receiver = await client.AcceptNextSessionAsync(advQueue);
+            ServiceBusReceiver receiver = await client.AcceptNextSessionAsync(_advQueue);
 
             //pull a message
             var msg = await receiver.ReceiveMessageAsync(maxWaitTime: TimeSpan.FromSeconds(3));
