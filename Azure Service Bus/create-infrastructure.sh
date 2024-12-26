@@ -5,7 +5,7 @@
 # Save connection string from output for next step
 ##########################################################################################
 
-$rg=MessagingDemo-RG
+rg=MessagingDemo-RG
 
 # create resource group
 az group create -l eastus -n $rg
