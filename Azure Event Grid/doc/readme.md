@@ -2,6 +2,21 @@
 
 ## `Thursday, 12/26/24` &rarr; `Event Grid Notes`
 
+### Publishers
+
+- App Configuration, App Service, Blob Storage, Communication Services, Container Registry, Event Hubs, IoT Hub,
+  Key Vault, Machine Learning, Maps, Media Services, Resource Groups, Service Bus, SignalR, Subscriptions
+
+### Event Handlers
+
+- Azure Functions, Event Hubs, Service Bus, Storage Queues, Webhooks
+
+### Worklog
+
+- Create topic, Send publisher events, Add subscriber info with filtering
+
+### General
+
 - Note that `Event Grid` supports multiple possible subscribers for an event, while `Event Hub` does not
 - This is a _topic_
 - `Event Grid` can act as a _message broker_. An application can submit custom events to the public endpoint and they can be delivered to subscribers
