@@ -12,7 +12,7 @@ namespace Domain
         {
             get
             {
-                return Environment.GetEnvironmentVariable("AZURE_QUEUE_STORAGE_CONNECTION_STRING") ?? throw new Exception("Environment variable: 'AZURE_QUEUE_STORAGE_CONNECTION_STRING' not found!");
+                return Environment.GetEnvironmentVariable("AZURE_SERVICE_BUS_CONNECTION_STRING") ?? throw new Exception("Environment variable: 'AZURE_SERVICE_BUS_CONNECTION_STRING' not found!");
             }
         }
     }

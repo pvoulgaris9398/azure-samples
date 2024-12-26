@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../Domain/Domain.csproj" />
+    <Using Include="Domain.Config" Static="true"/>
   </ItemGroup> 
 
   <ItemGroup>

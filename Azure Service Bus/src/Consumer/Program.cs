@@ -1,12 +1,6 @@
-﻿using System;
-using System.Linq;
-using Azure.Messaging.ServiceBus;
+﻿using Azure.Messaging.ServiceBus;
 using System.Text.Json;
-using System.Text.Encodings;
-using System.Text;
-using System.Threading.Tasks;
 using Azure.Messaging.ServiceBus.Administration;
-using System.Collections.Generic;
 using System.Transactions;
 using Domain;
 
@@ -14,11 +8,6 @@ namespace consumer
 {
     class Program
     {
-        /*
-        /  update connectionString value with output of previous script run. 
-        */
-        static string connectionString = "<your connection string from previous script run>";
-
 
         static string advQueue = "advanced-queue";
         static string simplQueue = "simple-queue";
@@ -26,11 +15,11 @@ namespace consumer
         static async Task Main(string[] args)
         {
             // configure admin client
-            ServiceBusAdministrationClient adminClint = new ServiceBusAdministrationClient(connectionString);
+            ServiceBusAdministrationClient adminClint = new ServiceBusAdministrationClient(ConnectionString);
             // configure transaction client
-            ServiceBusClient client = new ServiceBusClient(connectionString, new ServiceBusClientOptions { EnableCrossEntityTransactions = true });
+            ServiceBusClient client = new ServiceBusClient(ConnectionString, new ServiceBusClientOptions { EnableCrossEntityTransactions = true });
             //configure non-transaction client
-            ServiceBusClient nonTransactionClient = new ServiceBusClient(connectionString);
+            ServiceBusClient nonTransactionClient = new ServiceBusClient(ConnectionString);
 
             while (true)
             {
