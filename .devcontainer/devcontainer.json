@@ -14,7 +14,8 @@
         "pkief.material-icon-theme",
         "esbenp.prettier-vscode",
         "humao.rest-client",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "ms-azuretools.vscode-azureappservice"
       ],
       "settings": {
         "window.zoomLevel": 1,
