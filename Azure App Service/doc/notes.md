@@ -1,5 +1,20 @@
 # Azure App Service Notes
 
+## `Thursday, 12/27/24`
+
+- Working through `Deployment Slot` exercise in Chapter 2.
+- Was encountering the following error, when going to my _stage_ deployment slot website:
+
+![](2024-12-27-01.png)
+
+- Followed the instructions [here](https://learn.microsoft.com/en-us/answers/questions/567933/how-to-troubleshoot-the-error-aadsts50011) and [here](https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-AADSTS50011-redirect-uri-mismatch) and [here](https://stackoverflow.com/questions/50011686/aadsts50011-the-reply-url-specified-in-the-request-does-not-match-the-reply-url) and that worked:
+
+![](2024-12-27-02.png)
+
+## General Notes
+
+
+
 - `VNet Integration`
   - Only available with `Basic`, `Standard` and `Premium` plans
 - `Deployment Slots`
