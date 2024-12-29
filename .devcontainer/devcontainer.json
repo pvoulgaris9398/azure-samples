@@ -15,7 +15,8 @@
         "esbenp.prettier-vscode",
         "humao.rest-client",
         "EditorConfig.EditorConfig",
-        "ms-azuretools.vscode-azureappservice"
+        "ms-azuretools.vscode-azureappservice",
+        "ms-azuretools.vscode-docker"
       ],
       "settings": {
         "window.zoomLevel": 1,
