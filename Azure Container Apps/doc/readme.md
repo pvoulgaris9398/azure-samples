@@ -2,7 +2,35 @@
 
 ## Azure Container Apps
 
-- TODO: Add notes.
+### Container Apps Environment
+
+- The highest level resource in ACA is the `Container Apps` environment
+- Secure boundary where _container apps_ can be deployed
+- All apps in this environment share the same `VNet`
+- Can provision your own `VNet` or use one managed by Microsoft
+- All apps write to the same _Log Analytics_ workspace and share the same `DAPR` configuration
+
+### Container Apps
+
+- Each container can be configured with secrets and `DAPR` settings
+- Can configure _ingress_ settings, whether _ingress_ will be allowed from _anywhere_ or just your `VNet` (not available if `VNet` managed by Microsoft)
+- Authentication can be enabled
+- Three (3) main components, _containers_, _revisions_, _replicas_.
+- Configure _image_ to use, set environment variables, health probes and volume mounts
+
+#### Revisions
+
+- Apps use _revisions_ for _versioning_. Certain changes, such as container configuration and scaling rules are considered _revision-scope_ changes.
+- These _revision-scope_ changes will trigger a new _revision_ to be created.
+- More than one _revision_ could be running side-by-side with percentage of traffic allocated to each of them
+- Similar to _App Service_ deployment slots
+- _Revisions_ can run in a single _revision_ configuration. In this case `ACA` will wait until the new _revision_ is ready and then route all traffic to the new _revision_ with zero (0) downtime
+
+#### Replicas
+
+- _Replicas_ are **instances** of a _Revision_. Container apps scale down to zero (0) when idle, by default.
+- No _Replicas_ means no paying for them
+- If multiple _Revisions_ are active at once, the could be a number of _Replicas_ per _Revision_, depending on scaling rules
 
 ## Azure Container Registry
 
