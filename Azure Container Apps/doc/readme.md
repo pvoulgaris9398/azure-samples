@@ -32,6 +32,22 @@
 - No _Replicas_ means no paying for them
 - If multiple _Revisions_ are active at once, the could be a number of _Replicas_ per _Revision_, depending on scaling rules
 
+### Creating An ACA Environment
+
+- TODO: Add notes, can't work through the stupid samples, so at least review the notes
+
+### Creating and Configuring Container Apps
+
+- TODO
+
+### Configuring Health Probes
+
+- TODO
+
+### Configurint App Secrets
+
+- TODO
+
 ## Azure Container Registry
 
 - Create a `Resource Group`:
