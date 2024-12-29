@@ -39,7 +39,7 @@ echo $ACR_NAME
 az container create \
 	-g $RESOURCE_GROUP_NAME \
 	--name $CONTAINER_NAME \
-	--image $ACR_NAME.azurecr.io/helloacrtasks:v1 \
+	--image $ACR_NAME.azurecr.io/webapp:v2 \
 	--cpu 1 \
 	--memory 1 \
 	--registry-login-server $ACR_NAME.azurecr.io \
