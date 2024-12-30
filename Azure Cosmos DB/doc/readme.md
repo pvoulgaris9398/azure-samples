@@ -1,5 +1,10 @@
 # Azure Cosmos DB
 
+## TODO
+
+- Rework example
+- Review [this](https://azurecosmosdb.github.io/labs/) resource
+
 ## Consistency Levels
 
 - Default consistency is setup at the `Container` level and is `Session Consistency`

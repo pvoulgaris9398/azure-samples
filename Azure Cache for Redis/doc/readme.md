@@ -2,7 +2,10 @@
 
 - Good overview with walkthroughs and code samples [here](https://azure.github.io/redis-on-azure-workshop/)
 
-## TODO - Rework example code
+## TODO
+
+- Rework example
+- Review [this](https://azure.github.io/redis-on-azure-workshop/) resource
 
 ## Connection String Format
 
