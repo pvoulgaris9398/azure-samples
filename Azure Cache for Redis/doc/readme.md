@@ -1,6 +1,8 @@
-# Redis Notes
+# Azure Cache for Redis
 
 - Good overview with walkthroughs and code samples [here](https://azure.github.io/redis-on-azure-workshop/)
+
+## TODO - Rework example code
 
 ## Connection String Format
 
