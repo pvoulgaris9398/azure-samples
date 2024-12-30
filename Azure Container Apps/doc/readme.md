@@ -34,19 +34,34 @@
 
 ### Creating An ACA Environment
 
-- TODO: Add notes, can't work through the stupid samples, so at least review the notes
+- So the `az extension add --name containerapp --upgrade` command worked on my linuxmint development machine.
+
+```bash
+az group create -n $RESOURCE_GROUP_NAME -l $REGION
+
+az containerapp env create --name $CONTAINER_NAME --resource-group $RESOURCE_GROUP_NAME --location $REGION
+
+az containerapp compose create --environment $CONTAINER_NAME -g $RESOURCE_GROUP_NAME --location $REGION
+
+```
 
 ### Creating and Configuring Container Apps
 
-- TODO
+- `12/29/24 PM` &rarr; Was able to work through this example on my linuxmint development machine, pretty cool
+
+```bash
+az containerapp compose create --environment $CONTAINER_NAME -g $RESOURCE_GROUP_NAME --location $REGION
+```
 
 ### Configuring Health Probes
 
-- TODO
+- Liveness - periodically reports on the health of a replica
+- Readiness - signals when a new replica is ready for traffic
+- Startup - can be used to delay reporting on a _liveness_ or _readiness_ probe, when the app is slow to start up
 
 ### Configurint App Secrets
 
-- TODO
+- Worked through example adding a secret for the `demoapi` container
 
 ## Azure Container Registry
 
