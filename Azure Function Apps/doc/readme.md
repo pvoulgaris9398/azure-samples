@@ -1,5 +1,10 @@
 # Azure Function Apps
 
+## `Monday, 12/30/24`
+
+- Using `Azurite` and how to handle all the files it generates
+- See [here](https://mikestephenson.me/2021/12/28/dealing-with-annoying-azurite-files-when-developing-logic-apps/)
+
 ## Comparison to `Logic Apps`
 
 - `Logic App` development is more _declarative_
