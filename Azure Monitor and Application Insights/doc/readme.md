@@ -1,5 +1,9 @@
 # Monitoring and Logging Solutions in Azure
 
+## TODO
+
+- Review the metrics creation, etc. on `Application Insights`
+
 ## Azure Monitor
 
 - Is a well-known, free monitoring tool for infrastructure services
