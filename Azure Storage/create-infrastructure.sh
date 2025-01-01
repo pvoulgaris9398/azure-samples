@@ -1,9 +1,10 @@
 #!/bin/bash
 
+source .env
+
 rg=az204rg
 location=eastus
-account=storage.dev.4588212
 
 az group create --name $rg --location $location
 
-az storage account create -g $rg --name $account --location $location --sku Standard_LRS
+az storage account create -g $rg --name $BLOB_ACCOUNT_NAME --location $location --sku Standard_LRS
