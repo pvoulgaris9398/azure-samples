@@ -23,15 +23,11 @@ namespace AzureBlobStorageExample
 
             containerClient.CreateIfNotExists();
 
+            DisplayContainerProperties(containerClient);
+
             await AddContainerMetadata(containerClient, "Environment", "dev");
 
             DisplayContainerProperties(containerClient);
-
-            await AddContainerMetadata(containerClient, "Environment", "staging");
-
-            DisplayContainerProperties(containerClient);
-
-
 
             await ListContainers(blobServiceClient, "cont", null);
 
