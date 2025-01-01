@@ -2,13 +2,12 @@
 
 # From Chapter12 of Developing-Solutions-for-Microsoft-Azure-AZ-204-Exam-Guide-2nd-Edition
 
-rg=EventHubDemo-RG
+rg=az204rg
+location=eastus
+account=eventhub4588212
 
 # Create resource group
-az group create -l eastus -n $rg
-
-# To avoid name collisions generate a unique name for your account
-account=eventhub$RANDOM
+az group create -l $location -n $rg
 
 # create an Event Hubs namespace. 
 az eventhubs namespace create --name $account --resource-group $rg -l eastus --sku Standard

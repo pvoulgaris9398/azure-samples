@@ -1,10 +1,16 @@
 {
-    "window.zoomLevel": 2,
-    "editor.minimap.enabled":false,
-    "editor.stickyScroll.enabled": false,
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "files.exclude": {
-        "**/bin": true,
-        "**/obj": true
-    }
+  "window.zoomLevel": 2,
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "azureFunctions.deploySubpath": "Azure Function Apps/src/AzureFunctionAppExample/bin/Release/net7.0/publish",
+  "azureFunctions.projectLanguage": "C#",
+  "azureFunctions.projectRuntime": "~4",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.projectSubpath": "Azure Function Apps/src/AzureFunctionAppExample",
+  "azureFunctions.preDeployTask": "publish (functions)"
 }

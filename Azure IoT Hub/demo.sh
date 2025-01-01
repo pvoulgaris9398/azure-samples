@@ -9,7 +9,6 @@
 az extension add --upgrade -n azure-iot
 az extension add --upgrade -n stream-analytics
 
-
 # Create a resource group
 az group create -l eastus -n IoTHubDemo-RG
 

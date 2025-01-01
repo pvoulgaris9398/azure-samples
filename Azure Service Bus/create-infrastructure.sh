@@ -5,13 +5,12 @@
 # Save connection string from output for next step
 ##########################################################################################
 
-rg=MessagingDemo-RG
+rg=az204rg
+location=eastus
+account=sb4588212
 
 # create resource group
-az group create -l eastus -n $rg
-
-# to avoid name collisions generate unique name for your account
-account=sb$RANDOM
+az group create -l $location -n $rg
 
 # create a service bus namespace 
 az servicebus namespace create --name $account --resource-group $rg
