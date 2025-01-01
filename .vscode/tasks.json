@@ -71,7 +71,7 @@
       "type": "func",
       "dependsOn": "build (functions)",
       "options": {
-        "cwd": "${workspaceFolder}/Azure Function Apps/src/AzureFunctionAppExample/bin/Debug/net7.0"
+        "cwd": "${workspaceFolder}/Azure Function Apps/src/AzureFunctionAppExample/bin/Debug/net8.0"
       },
       "command": "host start",
       "isBackground": true,

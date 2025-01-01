@@ -7,7 +7,7 @@
     "**/bin": true,
     "**/obj": true
   },
-  "azureFunctions.deploySubpath": "Azure Function Apps/src/AzureFunctionAppExample/bin/Release/net7.0/publish",
+  "azureFunctions.deploySubpath": "Azure Function Apps/src/AzureFunctionAppExample/bin/Release/net8.0/publish",
   "azureFunctions.projectLanguage": "C#",
   "azureFunctions.projectRuntime": "~4",
   "debug.internalConsoleOptions": "neverOpen",
