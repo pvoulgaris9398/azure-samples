@@ -17,7 +17,8 @@
         "EditorConfig.EditorConfig",
         "ms-azuretools.vscode-azureappservice",
         "ms-azuretools.vscode-docker",
-        "ms-azuretools.vscode-azurefunctions"
+        "ms-azuretools.vscode-azurefunctions",
+        "Azurite.azurite"
       ],
       "settings": {
         "window.zoomLevel": 1,
