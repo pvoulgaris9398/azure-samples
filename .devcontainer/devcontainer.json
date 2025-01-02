@@ -21,6 +21,7 @@
         "Azurite.azurite"
       ],
       "settings": {
+        "workbench.startupEditor": "none",
         "window.zoomLevel": 1,
         "editor.minimap.autohide": true,
         "editor.stickyScroll.enabled": false,
