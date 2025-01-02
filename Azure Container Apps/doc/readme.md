@@ -1,5 +1,14 @@
 # Azure Container Apps
 
+## `Thursday, 1/2/25`
+
+- There is an excellent Microsof Learn resource [here](https://learn.microsoft.com/en-us/training/modules/run-docker-with-azure-container-instances/)
+- It covers a lot of good stuff about setting-up and running containers in `Azure Container Instances`
+- But some of the _sample_ images referenced no longer exist
+- Nevertheless, although it might take a little more time, \
+  I would like to create my own _hello world_ style images to use \
+  along with this sample, it would make a great end-to-end tutorial covering many concepts
+
 ## Azure Container Apps
 
 ### Container Apps Environment
