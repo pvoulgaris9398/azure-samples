@@ -16,7 +16,7 @@
 
 ## [Azure Cache for Redis](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/)
 
-## [Azure Front Doot and CDN](https://learn.microsoft.com/en-us/azure/frontdoor/)
+## [Azure Front Door and CDN](https://learn.microsoft.com/en-us/azure/frontdoor/)
 
 ## [Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/)
 
